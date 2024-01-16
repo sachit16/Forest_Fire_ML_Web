@@ -1,0 +1,35 @@
+
+
+
+
+<html>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; padding: 20px;">
+
+    <div class="login" style="max-width: 400px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+
+        <h1 style="color: #333333;">FWI(Fire Whether Index ) Prediction</h1>
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <input type="text" name="Temperature" placeholder="Temperature" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;" /><br>
+            <!-- Add similar styles for other input fields -->
+            <input type="text" name="RH" placeholder="RH" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"/><br>
+            <input type="text" name="Ws" placeholder="Ws" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"/><br>
+            <input type="text" name="Rain" placeholder="Rain" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"/><br>
+            <input type="text" name="FFMC" placeholder="FFMC" required="required"style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;" /><br>
+            <input type="text" name="DMC" placeholder="DMC" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"/><br>
+            <input type="text" name="ISI" placeholder="ISI" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"/><br>
+            <input type="text" name="Classes" placeholder="Classes" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"/><br>
+            <input type="text" name="Region" placeholder="Region" required="required" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"/><br>
+    
+    
+
+            <button type="submit" style="background-color: #4caf50; color: #ffffff; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Predict</button>
+        </form>
+
+        <h2 style="color: #333333; margin-top: 20px;">
+            THE FWI prediction is {{result}}
+        </h2>
+    </div>
+</body>
+</html>
